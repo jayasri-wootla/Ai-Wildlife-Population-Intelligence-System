@@ -778,6 +778,7 @@ function GISOverviewMap({
     showDensity,
     showAlerts,
     onSiteSelect,
+    validSites
   ]);
 
   /* =========================================================
