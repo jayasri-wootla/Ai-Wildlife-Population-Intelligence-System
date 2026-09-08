@@ -34,7 +34,18 @@ from app.api.routes.conservation_recommendations import router as conservation_r
 from app.api.routes.animal_counting import router as animal_counting_router
 
 app = FastAPI(title="Wildlife Population Intelligence System")
+from fastapi.middleware.cors import CORSMiddleware
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "https://wildlife-frontend-swart.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
