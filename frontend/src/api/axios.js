@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL:
+    process.env.REACT_APP_API_URL ||
+    "https://ai-wildlife-population-intelligence.onrender.com",
 });
 
 // Attach the token automatically so individual pages don't need to
